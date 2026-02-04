@@ -78,9 +78,6 @@ The system follows a classic three-tier architecture:
 
 ---
 
-It looks like your Markdown had a few structural hiccups—specifically with nested code blocks, inconsistent headers, and the alignment of the environment variables table.
-
-I’ve cleaned it up to be more scannable and professional. I also converted the environment variables into a proper Markdown table and adjusted the directory structure for better readability.
 
 ---
 
