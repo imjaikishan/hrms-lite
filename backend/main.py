@@ -10,6 +10,7 @@ app = FastAPI(title="HRMS Lite API")
 # 🔥 ADD THIS CORS CONFIG
 origins = [
     "http://localhost:3000",
+    "https://hrms-lite-delta-vert.vercel.app"
 ]
 
 app.add_middleware(
