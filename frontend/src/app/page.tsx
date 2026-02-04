@@ -26,22 +26,22 @@ export default function DashboardPage() {
       ) : (
         <div className="grid grid-cols-3 gap-6">
           <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
-            <h2 className="text-gray-500 text-sm">Total Employees</h2>
-            <p className="text-3xl font-semibold mt-3">
+            <h2 className="text-gray-700 text-sm font-medium">Total Employees</h2>
+            <p className="text-4xl font-semibold text-gray-900 mt-3">
               {summary.total_employees}
             </p>
           </div>
 
           <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
-            <h2 className="text-gray-500 text-sm">Present Today</h2>
-            <p className="text-3xl font-semibold mt-3 text-green-600">
+            <h2 className="text-gray-700 text-sm font-medium">Present Today</h2>
+            <p className="text-4xl font-semibold mt-3 text-green-600">
               {summary.present_today}
             </p>
           </div>
 
           <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
-            <h2 className="text-gray-500 text-sm">Absent Today</h2>
-            <p className="text-3xl font-semibold mt-3 text-red-600">
+            <h2 className="text-gray-700 text-sm font-medium">Absent Today</h2>
+            <p className="text-4xl font-semibold mt-3 text-red-600">
               {summary.absent_today}
             </p>
           </div>
