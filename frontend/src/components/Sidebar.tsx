@@ -17,8 +17,8 @@ export default function Sidebar() {
   return (
     <div className="w-64 h-screen bg-white border-r border-gray-200 p-6">
       <div className="mb-10">
-  <h2 className="text-xl font-bold">HRMS Lite</h2>
-  <p className="text-xs text-gray-400 mt-1">Admin Panel</p>
+  <h2 className="text-xl font-semibold text-black">HRMS Lite</h2>
+  <p className="text-xs text-gray-500 mt-1">Admin Panel</p>
 </div>
 
       <nav className="space-y-2">
