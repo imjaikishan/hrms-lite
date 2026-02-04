@@ -1,9 +1,12 @@
+from sqlalchemy import func
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from database import SessionLocal
+from datetime import date
 import models
 import schemas
-from sqlalchemy import func
+
+
 
 router = APIRouter()
 
@@ -19,7 +22,7 @@ def get_db():
 @router.post("/", response_model=schemas.AttendanceResponse, status_code=201)
 def mark_attendance(attendance: schemas.AttendanceCreate, db: Session = Depends(get_db)):
     employee = db.query(models.Employee).filter(
-        func.lower(models.Employee.employee_id) == employee_id.lower()
+        func.lower(models.Employee.employee_id) == attendance.employee_id.lower()
     ).first()
 
     if not employee:
@@ -41,11 +44,10 @@ def mark_attendance(attendance: schemas.AttendanceCreate, db: Session = Depends(
 
     return new_record
 
-
 @router.get("/{employee_id}", response_model=list[schemas.AttendanceResponse])
 def get_attendance(employee_id: str, db: Session = Depends(get_db)):
     employee = db.query(models.Employee).filter(
-        models.Employee.employee_id == employee_id
+        func.lower(models.Employee.employee_id) == employee_id.lower()
     ).first()
 
     if not employee:
@@ -56,7 +58,7 @@ def get_attendance(employee_id: str, db: Session = Depends(get_db)):
     ).all()
 
 
-from datetime import date
+
 
 @router.get("/summary/today")
 def get_today_summary(db: Session = Depends(get_db)):
