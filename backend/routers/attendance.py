@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from database import SessionLocal
 import models
 import schemas
+from sqlalchemy import func
 
 router = APIRouter()
 
@@ -18,7 +19,7 @@ def get_db():
 @router.post("/", response_model=schemas.AttendanceResponse, status_code=201)
 def mark_attendance(attendance: schemas.AttendanceCreate, db: Session = Depends(get_db)):
     employee = db.query(models.Employee).filter(
-        models.Employee.employee_id == attendance.employee_id
+        func.lower(models.Employee.employee_id) == employee_id.lower()
     ).first()
 
     if not employee:
